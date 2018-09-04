@@ -1,3 +1,5 @@
+/* Created by ByOrbit */
+
 #include <windows.h>
 #include <stdio.h>
 #define ID_LISTBOX1	100
@@ -112,8 +114,8 @@ LRESULT CALLBACK WndProc(HWND hWnd, UINT message, WPARAM wParam, LPARAM lParam)
 }
 void AddCity(HWND hListBox)
 {
-	char *cities[] = { "Kars", "Adana", "Ad˝yaman", "Afyon", "Ar˝", "Amasya", "Ankara", "Antalya",
-		"Artvin", "Ayd˝n", "Bal˝kesir", "Bilecik", "Edirne", "Eski˛ehir", "K˝r˛ehir", "Viran˛ehir", NULL };
+	char *cities[] = { "Kars", "Adana", "Ad√Ωyaman", "Afyon", "A√∞r√Ω", "Amasya", "Ankara", "Antalya",
+		"Artvin", "Ayd√Ωn", "Bal√Ωkesir", "Bilecik", "Edirne", "Eski√æehir", "K√Ωr√æehir", "Viran√æehir", NULL };
 	int i;
 	for (i = 0; cities[i] != NULL; ++i)
 		SendMessage(hListBox, LB_ADDSTRING, 0, (LPARAM)cities[i]);
@@ -124,7 +126,7 @@ void OnButtonClicked(HWND hListBox1, HWND hListBox2)
 	char text[30];
 	index = SendMessage(hListBox1, LB_GETCURSEL, 0, 0);
 	if (SendMessage(hListBox1, LB_GETCOUNT, 0, 0) == 0) {
-		MessageBox(NULL, "eleman bulunamad˝", "Message", MB_OK);
+		MessageBox(NULL, "eleman bulunamad√Ω", "Message", MB_OK);
 		return;
 	}
 	SendMessage(hListBox1, LB_GETTEXT, index, (LPARAM)text);
@@ -243,7 +245,7 @@ LRESULT CALLBACK WndProc(HWND hWnd, UINT message, WPARAM wParam, LPARAM lParam)
 		else if (GetDlgCtrlID(hButton) == wParam) 
 			SendMessage(hWnd, WM_USER, 0, 0);
 	/*case WM_USER:
-		MessageBox(hButton, "Butona t˝kland˝", "Message", MB_OK);
+		MessageBox(hButton, "Butona t√Ωkland√Ω", "Message", MB_OK);
 		
 	case WM_DESTROY:
 		PostQuitMessage(0);
@@ -255,7 +257,7 @@ LRESULT CALLBACK WndProc(HWND hWnd, UINT message, WPARAM wParam, LPARAM lParam)
 }
 
 void AddCity(HWND hListBox) {
-	char *cities[] = { "Ankara","›stanbul","Samsun","«ank˝r˝","«orum","Yozgat","Bursa","Tokat","Sinop","Mara˛","Antep","Kocaeli", NULL};
+	char *cities[] = { "Ankara","√ùstanbul","Samsun","√áank√Ωr√Ω","√áorum","Yozgat","Bursa","Tokat","Sinop","Mara√æ","Antep","Kocaeli", NULL};
 	int i;
 
 	for (i = 0; cities[i] != NULL; ++i)
@@ -268,7 +270,7 @@ void OnButtonClicked(HWND hListBox1, HWND hListBox2){
 	
 	index = SendMessage(hListBox1, LB_GETCURSEL, 0, 0);
 	if (SendMessage(hListBox1, LB_GETCOUNT, 0, 0) == 0) {
-		MessageBox(NULL, "Eleman Bulunamad˝!!", "Message", MB_OK);
+		MessageBox(NULL, "Eleman Bulunamad√Ω!!", "Message", MB_OK);
 		return;
 	}
 
